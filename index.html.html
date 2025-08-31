@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Rose Garg</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffe3ed;
+      overflow-x: hidden;
+    }
+    .intro, .container, .letter { padding: 20px; text-align: center; }
+    .intro {
+      min-height: 100vh;
+      background: linear-gradient(#fce4ec, #f8bbd0);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .intro h1 { font-size: 2.2rem; color: #880e4f; font-family: 'Georgia'; margin-bottom: 10px; }
+    .intro p { font-size: 1rem; color: #4a148c; margin-bottom: 20px; }
+    .container {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      transition: background 1s;
+      padding-bottom: 40px;
+    }
+    .slide { display: none; flex-direction: column; align-items: center; }
+    .slide.active { display: flex; animation: fadeIn 1s ease-in-out; }
+    img {
+      width: 90vw;
+      max-height: 50vh;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 4px solid white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin-bottom: 15px;
+    }
+    h2 { font-size: 1.5rem; color: #880e4f; position: relative; }
+    h2::before {
+      content: '👑';
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.2rem;
+    }
+    p { font-size: 0.95rem; color: #4a148c; max-width: 90vw; margin: 0 auto; padding: 0 10px; }
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    button {
+      padding: 10px 18px;
+      background: #ec407a;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .night-mode {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #4a148c;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .letter {
+      background: #fff3f8;
+      margin: 20px auto;
+      border-radius: 15px;
+      max-width: 90vw;
+      font-size: 1rem;
+      color: #880e4f;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    #countdown {
+      font-size: 1.2rem;
+      color: #d81b60;
+      margin-top: 10px;
+    }
+    .floating .petal {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: pink;
+      border-radius: 50%;
+      animation: fall 10s linear infinite;
+    }
+    @keyframes fall { to { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @media (max-width: 500px) {
+      .intro h1 { font-size: 1.8rem; }
+      .intro p, p { font-size: 0.9rem; }
+      .controls button { font-size: 0.9rem; padding: 8px 14px; }
+      h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="floating" id="floating"></div>
+
+  <div class="intro">
+    <h1>Once Upon A Time...</h1>
+    <p>In a faraway land, a beautiful princess named Rose Garg was born on 12th September 2025.<br>This is her fairytale, filled with love, laughter, and dreams.</p>
+    <div id="countdown"></div>
+    <button onclick="startShow()">Start the Magic</button>
+  </div>
+
+  <div class="container" id="slide-container">
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+1"><h2>Slide 1</h2><p>Our first memory — just like a scene from a Disney fairytale.</p></div>
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+2"><h2>Slide 2</h2><p>You looked like a princess on that day, and my heart melted.</p></div>
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+3"><h2>Slide 3</h2><p>Your smile — brighter than the castle fireworks at night.</p></div>
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+4"><h2>Slide 4</h2><p>A memory so warm, it feels like a hug from you.</p></div>
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+5"><h2>Slide 5</h2><p>Every moment with you is my favourite scene.</p></div>
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+6"><h2>Slide 6</h2><p>Even Cinderella would envy your glow here.</p></div>
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+7"><h2>Slide 7</h2><p>This was a day I never wanted to end.</p></div>
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+8"><h2>Slide 8</h2><p>In your eyes, I see home, dreams, and forever.</p></div>
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+9"><h2>Slide 9</h2><p>A princess so real, even Disney couldn’t write you better.</p></div>
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+10"><h2>Slide 10</h2><p>We laughed, danced, and created magic together.</p></div>
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+11"><h2>Slide 11</h2><p>The way you looked at me... I still melt.</p></div>
+    <div class="slide"><img src="https://placehold.co/300x400?text=Princess+12"><h2>Slide 12</h2><p>And here we are — a beautiful chapter yet to come. Happy Birthday, Rose!</p></div>
+
+    <div class="controls">
+      <button onclick="prevSlide()">Previous</button>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+  </div>
+
+  <div class="night-mode" onclick="toggleNightMode()">Toggle Night Mode</div>
+
+  <div class="letter">
+    <h2>My Love Letter to You</h2>
+    <p>My dearest Rose,<br><br>
+    Every day with you feels like a fairytale. You are brave, beautiful, kind, and so full of magic. I cherish every memory we have, and I can’t wait to create many more with you.<br><br>
+    You are my Disney princess, and I will always be your prince.<br><br>
+    Love you forever,<br>
+    — Your Ranjeet 💖</p>
+  </div>
+
+  <script>
+    const container = document.getElementById('slide-container');
+    const intro = document.querySelector('.intro');
+    const slides = document.querySelectorAll('.slide');
+    const bgColors = ['#ffe3ed','#f8cddc','#f3b7cf','#f0a1c3','#ec8bb8','#e875ad','#f6adc6','#f9c1d5','#fdcfe0','#ffc7d8','#ffb2ca','#ff9bbd'];
+    let currentSlide = 0;
+
+    function startShow() {
+      intro.style.display = 'none';
+      container.style.display = 'flex';
+      showSlide(currentSlide);
+    }
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+      container.style.background = bgColors[index % bgColors.length];
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function toggleNightMode() {
+      document.body.classList.toggle('night');
+      if (document.body.classList.contains('night')) {
+        document.body.style.background = '#1e1e2f';
+        container.style.color = '#fff';
+      } else {
+        document.body.style.background = '#ffe3ed';
+        container.style.color = '#4a148c';
+      }
+    }
+
+    const floating = document.getElementById('floating');
+    for (let i = 0; i < 30; i++) {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+      petal.style.top = '-' + Math.random() * 100 + 'px';
+      floating.appendChild(petal);
+    }
+
+    const countdownEl = document.getElementById("countdown");
+    const birthday = new Date("2025-09-12T00:00:00").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const gap = birthday - now;
+      const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((gap % (1000 * 60)) / 1000);
+      countdownEl.innerHTML = `Countdown to Rose's Birthday: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+</body>
+</html>
